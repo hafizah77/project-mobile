@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -33,13 +34,16 @@ class _AddDestinationPageState extends State<AddDestinationPage> {
           'created_at': FieldValue.serverTimestamp(),
         });
 
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Tempat wisata berhasil ditambahkan')),
         );
 
+        // ignore: use_build_context_synchronously
         Navigator.pop(context);
       } catch (e) {
         ScaffoldMessenger.of(
+          // ignore: use_build_context_synchronously
           context,
         ).showSnackBar(SnackBar(content: Text('Gagal menambahkan: $e')));
       } finally {

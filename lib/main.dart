@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travel_app/page/loginPage.dart';
-import 'package:travel_app/page/homePage.dart';
+import 'package:travel_app/page/homeUserPage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
 
   Future<Widget> _getInitialPage() async {
     final prefs = await SharedPreferences.getInstance();
-    final hasUser = prefs.containsKey('user_name') && prefs.containsKey('user_email');
+    final hasUser =
+        prefs.containsKey('user_name') && prefs.containsKey('user_email');
     return hasUser ? const HomePage() : const LoginPage();
   }
 
@@ -46,7 +47,9 @@ class MyApp extends StatelessWidget {
         future: _getInitialPage(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Scaffold(body: Center(child: CircularProgressIndicator()));
+            return const Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            );
           }
           return snapshot.data!;
         },

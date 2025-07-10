@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'transactionPage.dart'; // pastikan import ini sesuai dengan lokasi file kamu
+import 'transactionUserPage.dart'; // pastikan import ini sesuai dengan lokasi file kamu
 
 class DetailPage extends StatelessWidget {
   final Map<String, dynamic> data;
@@ -10,13 +10,12 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(data['name'] ?? 'Detail Tempat'),
-      ),
+      appBar: AppBar(title: Text(data['name'] ?? 'Detail Tempat')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          if (data['image_url'] != null && data['image_url'].toString().isNotEmpty)
+          if (data['image_url'] != null &&
+              data['image_url'].toString().isNotEmpty)
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.network(
@@ -65,7 +64,11 @@ class DetailPage extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             'Harga Tiket: Rp${data['price'] ?? 0}',
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.green),
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.green,
+            ),
           ),
           const SizedBox(height: 24),
           ElevatedButton(
@@ -76,6 +79,7 @@ class DetailPage extends StatelessWidget {
                   builder: (_) => TransactionPage(
                     destinationData: data,
                     docId: docId,
+                    userName: null,
                   ),
                 ),
               );

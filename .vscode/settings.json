@@ -1,3 +1,5 @@
 {
-  "cmake.sourceDirectory": "E:/Semester 6/prak mobile/file belajar/final/travel_app/linux"
+  "cmake.sourceDirectory": "E:/Semester 6/prak mobile/file belajar/final/travel_app/linux",
+  "C_Cpp.errorSquiggles": "disabled",
+  "C_Cpp.default.compilerPath": "e:\\Semester 6\\prak mobile\\file belajar\\final\\travel_app\\.vscode\\c_cpp_properties.json"
 }

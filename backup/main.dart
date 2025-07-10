@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travel_app/page/loginPage.dart';
-import 'package:travel_app/page/homePage.dart';
+import 'package:travel_app/page/homeUserPage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
